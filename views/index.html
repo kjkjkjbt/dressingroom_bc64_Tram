@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dressing Room</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./../assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="text-center">
+              <img src="./../assets/images/cybersoft.png" alt="Card image" />
+            </div>
+
+            <div class="card-body">
+              <h4 class="card-title text-center">- Virtual Dressing Room</h4>
+            </div>
+          </div>
+          <hr />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="nav nav-pills"></ul>
+
+          <div class="well">
+            <ul class="nav nav-tabs" id="myTabs">
+              <li class="nav-item">
+                <a class="nav-link active" id="top" data-toggle="tab" href="#ao"
+                  >Shirts</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="bottom" data-toggle="tab" href="#quan"
+                  >Trousers</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="acc" data-toggle="tab" href="#phukien"
+                  >Accessaries</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="shoes" data-toggle="tab" href="#giaydep"
+                  >Shoes/Flipflops
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="bags" data-toggle="tab" href="#tuixach">
+                  Wallet/Bags
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="hair" data-toggle="tab" href="#toc">
+                  Hairstyles</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="bg" data-toggle="tab" href="#nen">
+                  Background
+                </a>
+              </li>
+            </ul>
+            <div class="product-card">
+              <img
+                src="../assets/images/allbody/bikini_pants.png"
+                alt=""
+                style="width: 60%; height: auto"
+              />
+              <h3>Croptop</h3>
+              <p class="price">$19.99</p>
+              <p>Mô tả ...</p>
+              <!-- <button>Add to cart</button> -->
+              <button class="btn" id="addToCartBtn1" onclick="addToCart" >Add to cart</button>
+
+              <table class="shopping-cart">
+                <tbody>
+                    <tr>
+                        <th style="width: 40px;"></th>
+                        <th style="width: 90px;"></th>
+                        <th style="width: 500px;">Product</th>
+                        <th style="width: 90px;">Price</th>
+                        <th style="width: 160px;">Quantity</th>
+                        <th style="width: 90px;">Subtotal</th>
+                    </tr>
+                    <tr>
+                        <td class="cross-symbol">
+                            <div class="circle"  onclick="deleteRow(this)">&times;</div>
+                        </td>
+                        
+                        <td>SHIRTS </td>
+                        <td>$250</td>
+                        <td>
+                            <div class="quantity">
+                                <button class="minus">-</button><input type="text" class="number" value="1" min="1"><button class="plus">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+              
+            </div>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <!-- <button class="links" 
+                  onclick="body (event,'top')" > Shirts 
+                </button>
+                    
+                <button class="links"
+                  onclick="bodyBottom(event,'bot')"> Trousers
+                </button>
+                <button class="link"
+                  onclick="accessaries (event,'ac')">Accessaries
+                </button>
+                <button class="link"
+                  onclick="shoes (event,'shoes')"> Shoes / flipflob
+                </button>
+                <button class="link"
+                  onclick="bags (event,'bags')"> Wallet / handbag
+                </button>
+                <button class="link"
+                  onclick="hairstyle (event,'hairstyle')">Hair styles
+                </button>
+                <button class="link"
+                  onclick="background (event,'bg')">Background
+                </button> -->
+              <div class="tab-pane fade show active" id="top">
+                <!-- Danh sách áo sẽ được hiển thị ở đây -->
+              </div>
+              <div class="tab-pane fade" id="bottom"></div>
+              <!-- Danh sách quần sẽ được hiển thị ở đây -->
+              <div class="tab-pane fade" id="acc"></div>
+              <div class="tab-pane fade" id="shoes"></div>
+              <div class="tab-pane fade" id="bags"></div>
+              <div class="tab-pane fade" id="hair"></div>
+              <div class="tab-pane fade" id="bg"></div>
+            </div>
+
+            <button
+              id="try-on-btn"
+              class="btn btn-primary"
+              <i class="fa fa-align-center" ></i>
+            >
+              Wear it!
+            </button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contain">
+            <div class="body"></div>
+            <div class="model">
+              <img
+                src="../assets/images/background/background2.jpg"
+                alt=""
+                style="display: none"
+              />
+              <img
+                src="../assets/images/background/background3.jpg"
+                alt=""
+                style="display: none"
+              />
+
+              <img
+                src="../assets/images/background/background4.jpg"
+                alt=""
+                style="display: none"
+              />
+              <img
+                src="../assets/images/background/background5.jpg"
+                alt=""
+                style="display: none"
+              />
+              <img
+                src="../assets/images/background/background6.jpg"
+                alt=""
+                style="display: none"
+              />
+              <img
+                src="../assets/images/background/background7.jpg"
+                alt=""
+                style="display: none"
+              />
+              <img
+                src="../assets/images/background/background_998.jpg"
+                alt=""
+                style="display: none"
+              />
+            </div>
+            <div class="hairstyle"></div>
+            <div class="bikinitop"></div>
+            <div class="bikinibottom"></div>
+            <div class="handbag"></div>
+            <div class="feet"></div>
+            <div class="background"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- <script src="./../models/ListChosen.js"></script>
+    <script src="./../models/ChoseItem.js"></script>
+    <script src="./../utils/callData.js"></script>
+    <script src="./../controllers/main.js"></script> -->
+
+    <!-- click to try on -->
+    <script src="../utils/util.js"></script>
+    <!-- list product -->
+    <script src="../controllers/controll.js"></script>
+  </body>
+</html>
